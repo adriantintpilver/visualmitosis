@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CancerDB Profle</title>
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+    <% for (const mitosis of modelo) { %>
+    <% if (typeof mitosis.video_id === 'string' && mitosis.video_id.length !== 0) {%><%- include("partials/videoscripts") -%><% }  %>
+    <%- include("partials/navigation") %>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card m-card ">
+                    <img src="<%= mitosis.path %>" class="card-img-top border-25 soft-shadow" alt="<%= mitosis.filename %>">
+                    <div class="mt-2">
+                        <p class="image-title mb-0"><%= mitosis.title %></p>
+                        <p class="card-text"><%= mitosis.description %></p>
+                        <% if (typeof mitosis.video_id === 'string' && mitosis.video_id.length !== 0) {%>
+                            <% if (mitosis.video_type === 1) {%> <!-- Youtube --> 
+                                <div id="player"class="card-img-top border-25 soft-shadow"></div>
+                            <% } %>
+                            <% if (mitosis.video_type === 2) {%> <!-- Vimeo --> 
+                                <iframe src="https://player.vimeo.com/video/<%= mitosis.video_id %>?h=87f80eda9b&color=000000&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="card-img-top border-25 soft-shadow" style="background: #000000;"></iframe>
+                            <% } %>
+                        <% }  %>
+                        <a class="image-copyright" href="http://<%= mitosis.copyright_link %>" target="_blank"><%= mitosis.copyright_name %></a>
+                        <hr class="hr" />
+                        <a href="/find/<%= find %>" class="btn btn-primary">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% break } %>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+
+<nav class="navbar navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"> <b>Mitosis</b>.pictures</a>
+      <form class="d-flex flex-row">
+        <a class="nav-link m-0" href="/upload">
+            Upload
+        </a>
+      </form>
+    </div>
+  </nav>
+  <nav class="navbar soft-shadow">
+    <form action="/find" method="post" class="search-row" enctype="multipart/form-data">
+      <div class="form-group">
+          <input class="form-control me-10" type="text" name="search" placeholder="Search" aria-label="Search" value="<%= find %>">
+      </div>
+  </form>
+    
+  </nav>
