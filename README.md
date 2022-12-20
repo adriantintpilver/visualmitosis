@@ -1,13 +1,12 @@
 # Visual-CancerDB
 
-Visual CancerDB is a website that displays data from the https://cancerdb.com public database that contains data on all cancer treatments and related entities.
+Visual Mitosis is a website that displays data from the https://cancerdb.com public database that contains data on all cancer treatments and related entities.
 
 Someone's new treatment could be just 2 ideas away from being the next big cure. CancerDB can help you discover what those 2 missing pieces of knowledge are.
 
 For cancer patients and their loved ones, we want to bring you the absolute best facts about cancer. We will deliver that information to you quickly, free of charge and you can trust it 100%.
 
-The site does not yet have a domain and cannot be navigated.
-In this initial stage it is uploaded to the AWS instance --> http://ec2-18-230-108-113.sa-east-1.compute.amazonaws.com/ but it is not available 100% of the time.
+The site does not yet have a domain and cannot be navigated. In this initial stage.
 
 <b>To upload a case</b>
 
@@ -29,21 +28,19 @@ url "/edit/6352d3a3cfa0c5cbf376d92c" to edit it.
 
 <b>To build the full site locally</b>
 
-Te site is set up to slow it down in a docker with docker-compose and these are the instructions:
+Te site is set up these are the instructions:
 
-As a precondition you must have docker and docker compose installed in your local machine.
-
-1- Go to the command line in the folder where you have the downloaded project. For example c:/Visual-CancerDB
+1- Go to the command line in the folder where you have the downloaded project. For example c:/visualmitosis
 2- install packages with npm
 ```bash
-npm i express ejs fs-extra sqlite3 morgan multer timeago.js uuid
+npm i express ejs fs-extra sqlite3 morgan multer timeago.js uuidv4 fs-extra
 ```
-3- run this in the local folder with the project
+3- run this in the local folder with the project for dev 
 ```bash
- docker-compose build
+ npm run dev
 ```
-4- start
+4- or for production run
 ```bash
-docker-compose up
+npm run prd
 ```
-5- navigate to http://localhost:5000
+5- navigate to http://localhost:3000
