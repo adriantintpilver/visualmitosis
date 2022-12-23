@@ -1,13 +1,13 @@
 name: Saludo
 
-on: [push, issues]
+on: [issues]
 
 jobs:
   greetings:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-      push: write
+      pull-requests: write
     steps:
     - uses: actions/first-interaction@v1
       with:
