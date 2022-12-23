@@ -1,11 +1,6 @@
-- name: Create A File
-  # You may pin to the exact commit or the version.
-  # uses: 1arp/create-a-file-action@ee80edaa4741d9997dbe053e052329d4070c020c
-  uses: 1arp/create-a-file-action@0.2
+- name: Create File Node v16
+  uses: fertrig/create-file-action@1.0.2
   with:
-    /
-    path: /
-    # The name of the file to be created with extention
-    file: test.txt 
-    # The content of the file
-    content: Hello wolrd
+    path: . 
+    file: test.txt
+    content: hello 
