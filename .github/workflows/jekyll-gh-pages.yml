@@ -1,6 +1,12 @@
-- name: Create File Node v16
-  uses: fertrig/create-file-action@1.0.2
-  with:
-    path: . 
-    file: test.txt
-    content: hello 
+name: Enviroment Variables
+
+on: [push]
+
+jobs:
+  example-job-1:
+    runs-on: unbuntu-latest
+    env:
+      DAY_OF_WEEK: Tuesday
+    steps:
+      - run: echo "today is ${{ env.DAY_OF_WEEK }}"
+      - name: Build and Publish
